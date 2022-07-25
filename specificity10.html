@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Specificity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Specificity</h1>
+  <p id="p1">Setiap deklarasi CSS(selector) memiliki <b>Berat</b> yang berbeda. Berat tersebut menentukan seberapa spesifik sebuah elemen dapat dipilih oleh selector. Untuk lebih jelasnya kunjungi situs ini <a href="http://www.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/"> Klik</a></p>
+  <h2>Menghitung Nilai Specificity</h2>
+  <small>[0 = inline]</small>
+  <small>[0 = id]</small>
+  <small>[0 = class]</small>
+  <small>[0 = elemen]</small>
+  <p> cara mengitung #p1</p>
+  <small>[0 = inline]</small>
+  <small>[1 = id]</small>
+  <small>[0 = class]</small>
+  <small>[0 = elemen]</small>
+  <hr>
+  <p> Bandingkan dengan tag p</p>
+  <small>[0 = inline]</small>
+  <small>[0 = id]</small>
+  <small>[0 = class]</small>
+  <small>[1 = elemen]</small>
+  <hr>
+  <ul id="sarapan">
+    <li class="favorit">Nasi Goreng</li>
+    <li>Bubur ayam</li>
+    <li>Rujak</li>
+    <li>Rawon</li>
+  </ul>
+  <h6>ul#sarapan li</h6>
+  <small>[0 = inline]</small>
+  <small>[1 = id]</small>
+  <small>[0 = class]</small>
+  <small>[2 = elemen]</small>
+  <h6>.favorit</h6>
+  <small>[0 = inline]</small>
+  <small>[0 = id]</small>
+  <small>[1 = class]</small>
+  <small>[0 = elemen]</small>
+  <h6>ul#sarapan li lebih spesifik dari . favorit, karena ul#sarapan li nilainya lebih banyak dari .favorit</h6>
+  <h2>Solusi</h2>
+  <ol>
+    <li>buat elemen yang diinginkan agar lebih <b>spesifik</b></li>
+    <li>tambahkan beban pada elemen tersebut agar semakin <b>Berat</b></li>
+  </ol>
+  <p>contoh</p>
+  <ul id="aku">
+    <li class="kamu">Adi</li>
+    <li>afrik</li>
+  </ul>
+  <h6>ul#aku li</h6>
+  <small>[0 = inline]</small>
+  <small>[1 = id]</small>
+  <small>[0 = class]</small>
+  <small>[2 = elemen]</small>
+  <h6>ul#aku .kamu li</h6>
+  <small>[0 = inline]</small>
+  <small>[1 = id]</small>
+  <small>[1 = class]</small>
+  <small>[2 = elemen]</small>
+  <h6>ul#aku .kamu li lebih spesifik dari ul#aku li, karena ul#aku .kamu li nilainya lebih banyak dari ul#aku li</h6>
+  <h4><a href="http://specificity.keegan.st">Kalkulator Specificity</a></h4>
+</body>
+</html>
